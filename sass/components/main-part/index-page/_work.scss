@@ -1,0 +1,53 @@
+.work--pb {
+  padding-bottom: 94px;
+}
+
+// .section-title for work / team / clients sections at _base.scss
+// .section-title--mb for work / team / clients sections at _base.scss
+
+.work-list {
+  display: flex;
+  flex-wrap: wrap; /* если теоретически добавят еще картинок */
+
+  @extend %list-reset;
+}
+
+.work-list__item {
+  position: relative;
+
+  width: calc((100% - 60px) / 3);
+
+  /* дать всем эдементам правый маржин, кроме каждого кратного 3-м (3й, 6й, 9й) */
+  &:not(:nth-child(3n)) {
+    margin-right: 30px;
+  }
+}
+
+/* *for position-block */
+.work-list__position-block {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  // Для выравнивания текста внутри по центру
+  @extend %flex-center;
+
+  padding-top: 27px;
+  padding-bottom: 27px;
+  width: 100%;
+
+  background: rgba(47, 48, 58, 0.8);
+}
+
+/* *for position-text */
+.work-list__position-text {
+  margin: 0;
+
+  font-family: $main-font-family;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $bg-third-color;
+}

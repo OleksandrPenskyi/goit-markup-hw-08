@@ -1,0 +1,111 @@
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+
+  @extend %list-reset;
+}
+
+.examples__list {
+  /* Ширина элемента списка в % */
+  width: calc((100% - 60px) / 3);
+
+  background: $bg-card-color;
+  transition: box-shadow $transition-duration $transition-timing-formula;
+
+  /* правый маржин для всех элементов списка, кроме каждого 3-го, 6-го, 9-го и тд */
+  &:not(:nth-child(3n)) {
+    margin-right: 30px;
+  }
+
+  /* нижний маржин для всех элементов списка, кроме 3-х последних элементов списка*/
+  &:not(:nth-last-child(-n + 3)) {
+    margin-bottom: 30px;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+}
+
+/* Прятающийся блок */
+/* Относительно этого блока поиционируем .transormation-box */
+.examples__position-box {
+  position: relative;
+  overflow: hidden;
+}
+
+// Блок спрятан
+.examples__transormation-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(+100%);
+
+  padding-top: 63px;
+  padding-bottom: 63px;
+  padding-left: 24px;
+  padding-right: 24px;
+  height: 294px;
+  width: 100%;
+
+  background: rgba(33, 150, 243, 0.9);
+
+  transition: transform $transition-duration $transition-timing-formula;
+}
+
+// Блок появляется
+.examples__link {
+  display: block;
+
+  text-decoration: none;
+
+  /* .transormation-box вылазит снизу при наведении на li */
+  &:hover .examples__transormation-box,
+  &:focus .examples__transormation-box {
+    transform: translateY(0);
+  }
+}
+
+.examples__position-text {
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: $third-text-color;
+}
+/* *CLOSED прятающийся блок */
+
+.examples__text-block {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  border-left: 1px solid $border-main-color;
+  border-bottom: 1px solid $border-main-color;
+  border-right: 1px solid $border-main-color;
+}
+
+.examples__title {
+  margin-top: 0;
+  margin-bottom: 4px;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.examples__text {
+  margin: 0;
+
+  color: $secondary-text-color;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.03em;
+}

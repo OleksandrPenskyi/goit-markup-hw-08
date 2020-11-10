@@ -1,0 +1,291 @@
+/* *modal window */
+.backdrop {
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+
+  /* При появлении backdrop, фон появляется плавно */
+  transition: opacity $transition-duration $transition-timing-formula;
+}
+
+.backdrop--pos-size {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  /* Чтобы модальное окно было выше других эллементов страницы */
+  z-index: 100;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+
+  /* чтобы пропадала подложка backdrop и под ним можно было что-то нажать */
+  pointer-events: none;
+
+  /* *При выключенном backdrop, свойства modal такие */
+  & .modal {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+/* *Modal активное */
+.modal {
+  background: $bg-card-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transition: transform $transition-duration $transition-timing-formula;
+}
+
+.modal--pos-size {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  width: 528px;
+  height: 581px;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.modal__closed-btn {
+  /* Position относительно .modal */
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: $bg-card-color;
+
+  &:hover .modal__closed-svg,
+  &:focus .modal__closed-svg {
+    fill: $main-blue-color;
+  }
+}
+
+.modal__closed-svg {
+  /* Position Позиционируем по центру относительно круга (.closed-btn)*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  transition: fill $transition-duration $transition-timing-formula;
+}
+
+/* Form для модального окна */
+.form-field__title {
+  display: block;
+  margin-bottom: 12px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  color: $primary-text-color;
+}
+
+/* для первых трех input  */
+.form-block {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-block--mb {
+  margin-bottom: 10px;
+}
+
+/* для блока textarea */
+.form-textarea {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-textarea--mb {
+  margin-bottom: 20px;
+}
+
+.form-block__label,
+.form-textarea__label-comment {
+  margin-top: 0;
+  margin-bottom: 4px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: $secondary-text-color;
+}
+
+.form-block__input {
+  width: 100%;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 42px;
+  padding-right: 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  /* при фокусе на input (и при набраном тексте) происходит смена цвета рамки */
+  &:focus,
+  &:not(:placeholder-shown) {
+    outline: none;
+    border-color: $main-blue-color;
+  }
+
+  /* при фокусе на input (и при набраном тексте) происходит смена цвета icon svg */
+  &:focus + .form-block__svg,
+  &:not(:placeholder-shown) + .form-block__svg {
+    fill: $main-blue-color;
+  }
+}
+
+.form-block__svg {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+
+  /* Чтобы можно было нажать поверх svg icon */
+  pointer-events: none;
+}
+
+.form-textarea__textarea {
+  resize: none;
+  width: 100%;
+  height: 120px;
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  /* Когда textarea в фокусе и набран текст (т.е. нет placeholder), то рамка становится синей  */
+  &:focus,
+  &:not(:placeholder-shown) {
+    outline: none;
+    border-color: $main-blue-color;
+  }
+
+  /* Когда textarea в фокусе и набран текст (т.е. нет placeholder), label-placeholder исчезает */
+  &:focus + .form-textarea__label-placeholder,
+  &:not(:placeholder-shown) + .form-textarea__label-placeholder {
+    @extend %visually-hidden;
+  }
+}
+
+// пункт 'Введите текст'
+.form-textarea__label-placeholder {
+  position: absolute;
+  top: 32px;
+  left: 17px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+/* Кастомный чекбокс */
+.form-policy {
+  @extend %flex-center;
+}
+
+.form-policy--mb {
+  margin-bottom: 30px;
+}
+
+.form-policy__label {
+  @extend %flex-center;
+}
+
+/* Скрываем стандартный чекбокс */
+.form-policy__checkbox {
+  @extend %visually-hidden;
+
+  /* Когда чекбокс в фокусе, или наведен Ховер, то кастомный чекбокс подсвечивается синей рамкой  */
+  &:focus + .form-policy__icon-check::before,
+  &:hover + .form-policy__icon-check::before {
+    border-color: $main-blue-color;
+  }
+
+  /* Когда кастомный чекбокс зачекан, то он с синей птичкой */
+  &:checked + .form-policy__icon-check::before {
+    background-color: $main-blue-color;
+    background-image: url('../images/icon-check.svg');
+    background-size: contain;
+    border-color: transparent;
+    background-origin: border-box;
+  }
+}
+
+.form-policy__icon-check {
+  display: flex;
+  align-items: center;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: $secondary-text-color;
+
+  /* Оформляем кастомный чекбокс */
+  &::before {
+    display: inline-block;
+    content: '';
+    width: 16px;
+    height: 15px;
+    margin-right: 8px;
+
+    border: 2px solid $primary-text-color;
+    border-radius: 2px;
+
+    transition: all $transition-duration $transition-timing-formula;
+  }
+}
+
+.form-policy__contract-terms {
+  color: $main-blue-color;
+}
+
+/* Кнопка отправки формы */
+.btn-send {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  border: none;
+  background: $main-blue-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: $third-text-color;
+}
+
+.btn-send--size {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 56px;
+  padding-right: 55px;
+}

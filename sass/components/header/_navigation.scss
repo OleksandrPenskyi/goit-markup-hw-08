@@ -1,0 +1,79 @@
+// Общая обертка для Логотипа + Меню
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+// Логотип
+.logo {
+  font-family: $secondary-font-family;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: $main-blue-color;
+}
+
+.logo__studio-black {
+  color: $primary-text-color;
+}
+// CLOSED Логотип
+
+// Меню
+.nav__list {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 93px;
+  margin-right: 0;
+  padding: 0;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  list-style: none;
+}
+
+.nav__list-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.nav__link {
+  position: relative;
+
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  color: $primary-text-color;
+  text-decoration: none;
+  /* Переход CSS */
+  transition: color $transition-duration $transition-timing-formula;
+
+  &:hover,
+  &:focus {
+    color: $main-blue-color;
+  }
+}
+
+/* active page */
+.nav__link--active {
+  color: $main-blue-color;
+
+  /* position (after) for active link*/
+  &:after {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+
+    display: block;
+    content: '';
+    height: 4px;
+    width: 100%;
+
+    border-radius: 2px;
+    background: $main-blue-color;
+  }
+}

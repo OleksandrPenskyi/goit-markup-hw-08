@@ -1,0 +1,93 @@
+.team {
+  background: $bg-secondary-color;
+}
+
+.team--ptb {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+// .section-title for work / team / clients sections at _base.scss
+// .section-title--mb for work / team / clients sections at _base.scss
+
+.team-list {
+  display: flex;
+  flex-wrap: wrap; // вдруг добавят еще членов команды
+
+  @extend %list-reset;
+}
+
+.team-list__item {
+  width: calc((100% - 90px) / 4);
+  padding-bottom: 30px;
+
+  background: $bg-card-color;
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  &:not(:nth-child(4n)) {
+    margin-right: 30px;
+  }
+}
+
+.team-list__img {
+  margin-bottom: 30px;
+}
+
+.team-list__title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+}
+
+.team-list__text {
+  margin-top: 0;
+  margin-bottom: 16px;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+
+  color: $secondary-text-color;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+}
+
+.team-list__social-block {
+  @extend %flex-center;
+
+  list-style: none;
+}
+
+.team-list__social-link {
+  @extend %flex-center;
+  width: 44px;
+  height: 44px;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  fill: $icon-main-color;
+
+  &:hover,
+  &:focus {
+    fill: $third-text-color;
+    background-color: $main-blue-color;
+    border-radius: 50%;
+  }
+
+  /* Переходы CSS  */
+  transition: fill $transition-duration $transition-timing-formula,
+    background-color $transition-duration $transition-timing-formula,
+    border-radius $transition-duration $transition-timing-formula;
+}

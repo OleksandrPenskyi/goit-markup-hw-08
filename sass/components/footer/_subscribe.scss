@@ -1,0 +1,86 @@
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
+
+// footer-title and footer-title--mb at _social.scss
+
+.subscribe__form {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.subscribe__form-input {
+  display: flex;
+  align-items: center;
+
+  margin-right: 12px;
+  width: 358px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background: $bg-main-color;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+
+  /* Стили для активной фазы input */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: $subscribe-form-color;
+
+  /* Когда input активен или исчез плейсхолдер - (label) надпись E-mail скрывается  */
+  &:focus + .subscribe__form-label,
+  &:not(:placeholder-shown) + .subscribe__form-label {
+    @extend %visually-hidden;
+  }
+}
+
+.subscribe__form-label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+
+  /* Стили для надписи E-mail */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: $subscribe-form-color;
+
+  /* Чтобы можно было нажать поверх form-label текста */
+  pointer-events: none;
+}
+
+/* Кнопка отправки  */
+.subscribe__form-btn {
+  display: flex;
+  align-items: center;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 29px;
+  padding-right: 28px;
+
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: $third-text-color;
+
+  background: $main-blue-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+}
+
+.subscribe__svg {
+  margin-left: 10px;
+}

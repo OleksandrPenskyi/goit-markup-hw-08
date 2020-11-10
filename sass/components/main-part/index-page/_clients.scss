@@ -1,0 +1,36 @@
+.clients--ptb {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+// .section-title for work / team / clients sections at _base.scss
+// .section-title--mb for work / team / clients sections at _base.scss
+
+.clients-block {
+  display: flex;
+}
+
+.clients-block__link {
+  @extend %flex-center;
+
+  width: calc((100% - 150px) / 6);
+  height: 90px;
+
+  text-decoration: none;
+  border: 1px solid $icon-main-color;
+  border-radius: 4px;
+  fill: $icon-main-color;
+  /* Переходы для hover / focus  */
+  transition: border-color $transition-duration $transition-timing-formula,
+    fill $transition-duration $transition-timing-formula;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $main-blue-color;
+    fill: $main-blue-color;
+  }
+}

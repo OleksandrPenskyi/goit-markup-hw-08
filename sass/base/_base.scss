@@ -1,0 +1,38 @@
+/* *for all page  */
+body {
+  font-family: $main-font-family;
+}
+
+h2,
+h3 {
+  color: $primary-text-color;
+}
+
+img {
+  display: block;
+}
+
+// main container
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+// .section-title for work / team / clients sections
+.section-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  color: $primary-text-color;
+}
+
+// .section-title--mb for work / team / clients sections
+.section-title--mb {
+  margin-bottom: 50px;
+  margin-top: 0;
+}

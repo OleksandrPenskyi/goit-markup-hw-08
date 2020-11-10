@@ -1,0 +1,15 @@
+/* !Футер */
+.footer {
+  background: $bg-main-color;
+}
+
+.footer--ptb {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+// Общий flex-контейнер для всего Footer
+.footer-flex {
+  display: flex;
+  align-items: baseline;
+}

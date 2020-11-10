@@ -1,0 +1,33 @@
+.footer-address--box {
+  margin-right: 70px;
+}
+
+// .logo in the Header
+.logo__studio-white {
+  color: $third-text-color;
+}
+
+.address {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+
+// Модификатор блока .address с внешней геометрией
+.address--box {
+  margin-top: 20px;
+}
+
+.address__map {
+  color: $third-text-color;
+}
+
+.address__link {
+  display: inline-block;
+  margin-top: 9px;
+
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+}

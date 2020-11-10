@@ -1,0 +1,48 @@
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+// напись "Присоединяйтесь"
+.footer-title {
+  font-family: $main-font-family;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $third-text-color;
+}
+
+.footer-title--mb {
+  margin-bottom: 20px;
+}
+
+.social-block {
+  @extend %flex-center;
+
+  list-style: none;
+}
+
+.social-block__social-link {
+  @extend %flex-center;
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  fill: $bg-card-color;
+
+  /* Переходы CSS  */
+  transition: background $transition-duration $transition-timing-formula;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &:hover,
+  &:focus {
+    background: $main-blue-color;
+  }
+}

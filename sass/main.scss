@@ -1,0 +1,26 @@
+@import './utils/variables';
+@import './utils/placeholders';
+@import './base/base';
+
+// header for both pages
+@import './components/header/header-section';
+@import './components/header/navigation';
+@import './components/header/contacts';
+
+// main for index.html
+@import './components/main-part/index-page/hero';
+@import './components/main-part/index-page/hero-backdrop-modal';
+@import './components/main-part/index-page/adv';
+@import './components/main-part/index-page/work';
+@import './components/main-part/index-page/team';
+@import './components/main-part/index-page/clients';
+
+// main for portfolio.html
+@import './components/main-part/portfolio-page/filter';
+@import './components/main-part/portfolio-page/examples';
+
+// footer for both pages
+@import './components/footer/footer-section';
+@import './components/footer/address';
+@import './components/footer/social';
+@import './components/footer/subscribe';
