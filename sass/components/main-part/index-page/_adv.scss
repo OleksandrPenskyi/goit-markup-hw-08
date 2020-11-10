@@ -1,35 +1,73 @@
+// Done
 .advantages--ptb {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
+// Nothing
 .title-hidden {
   @extend %visually-hidden;
 }
 
 .advantages-list {
-  display: flex;
-  flex-wrap: wrap; /*вдруг добавят еще разделов*/
   @extend %list-reset;
+
+  // и для планшета и для ПК
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .advantages-list__item {
-  width: calc((100% - 90px) / 4);
+  @media screen and (max-width: 767px) {
+    margin-bottom: 30px;
+  }
 
-  &:not(:nth-child(4n)) {
-    margin-right: 30px;
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    width: calc((100% - 30px) / 2);
+
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 30px;
+    }
+
+    &:not(:nth-child(2n)) {
+      margin-right: 30px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 90px) / 4);
+
+    margin-bottom: 0;
+
+    &:not(:nth-child(4n)) {
+      margin-right: 30px;
+    }
   }
 }
 
 //  Блок с SVG
 .advantages-list__box {
   @extend %flex-center;
-  width: 270px;
-  height: 120px;
-  margin-bottom: 30px;
-  border-radius: 4px;
-
   background: $bg-secondary-color;
+  width: 450px;
+  height: 120px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 768px) {
+    width: 354px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 270px;
+  }
 }
 
 .advantages-list__title {
