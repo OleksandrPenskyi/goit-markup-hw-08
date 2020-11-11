@@ -2,6 +2,7 @@
   padding-top: 60px;
   padding-bottom: 60px;
 
+  // Для ПК
   @media screen and (min-width: 1200px) {
     padding-top: 94px;
     padding-bottom: 94px;
@@ -11,31 +12,62 @@
 // .section-title for work / team / clients sections at _base.scss
 // .section-title--mb for work / team / clients sections at _base.scss
 
+// Для все экранов
 .clients-block {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .clients-block__link {
   @extend %flex-center;
-
-  width: calc((100% - 150px) / 6);
   height: 90px;
 
   text-decoration: none;
+  fill: $icon-main-color;
   border: 1px solid $icon-main-color;
   border-radius: 4px;
-  fill: $icon-main-color;
   /* Переходы для hover / focus  */
   transition: border-color $transition-duration $transition-timing-formula,
     fill $transition-duration $transition-timing-formula;
-
-  &:not(:last-child) {
-    margin-right: 30px;
-  }
 
   &:hover,
   &:focus {
     border-color: $main-blue-color;
     fill: $main-blue-color;
+  }
+
+  // Для мобильного
+  @media screen and (max-width: 767px) {
+    width: calc((100% - 30px) / 2);
+
+    &:not(:nth-child(2n)) {
+      margin-right: 30px;
+    }
+
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 30px;
+    }
+  }
+
+  // Для планшета
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    width: calc((100% - 60px) / 3);
+
+    &:not(:nth-child(3n)) {
+      margin-right: 30px;
+    }
+
+    &:not(:nth-last-child(-n + 3)) {
+      margin-bottom: 30px;
+    }
+  }
+
+  // Для ПК
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 150px) / 6);
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
   }
 }
