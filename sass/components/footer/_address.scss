@@ -1,8 +1,28 @@
-.footer-address--box {
-  margin-right: 70px;
+.footer-address {
+  // для мобильного и планшета
+  @media screen and (max-width: 1199px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.footer-address--m {
+  // для планшета
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-left: 61px;
+    margin-right: 165px;
+  }
+
+  // для ПК
+  @media screen and (min-width: 1200px) {
+    margin-right: 70px;
+  }
 }
 
 // .logo in the Header
+
 .logo__studio-white {
   color: $third-text-color;
 }
@@ -13,19 +33,34 @@
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+
+  // для мобильного и планшета
+  @media screen and (max-width: 1199px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 // Модификатор блока .address с внешней геометрией
-.address--box {
+.address--m {
+  // для всех
   margin-top: 20px;
+
+  // для телефона
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
+  }
 }
 
 .address__map {
+  display: block;
   color: $third-text-color;
 }
 
 .address__link {
-  display: inline-block;
+  display: block;
   margin-top: 9px;
 
   color: rgba(255, 255, 255, 0.6);

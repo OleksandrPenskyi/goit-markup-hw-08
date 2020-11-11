@@ -1,7 +1,21 @@
 .footer-social {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+
+  // для пк
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.footer-social--mb {
+  // для телефона
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
+  }
 }
 
 // напись "Присоединяйтесь"

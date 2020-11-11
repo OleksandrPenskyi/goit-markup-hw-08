@@ -3,6 +3,7 @@
   background: $bg-main-color;
 }
 
+// для всех экранов
 .footer--ptb {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -10,6 +11,30 @@
 
 // Общий flex-контейнер для всего Footer
 .footer-flex {
-  display: flex;
-  align-items: baseline;
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    align-items: baseline;
+  }
+}
+
+.footer__wrapper {
+  // для планшета
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: flex;
+    align-items: baseline;
+    justify-content: start;
+  }
+
+  // для ПК
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: baseline;
+  }
+}
+
+.footer__wrapper--mb {
+  // для планшета
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-bottom: 60px;
+  }
 }
