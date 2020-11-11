@@ -1,9 +1,7 @@
-// Notning
 .hero {
   text-align: center;
 }
 
-// Notning
 .hero-container {
   background-color: $bg-main-color;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
@@ -11,44 +9,26 @@
   background-position: center;
 }
 
-// Done
 .hero-container--size {
-  max-width: 480px;
-  height: 400px;
+  max-width: 1600px;
+  height: 600px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 118px;
-
-  @media sreen and (min-width: 768px) {
-    max-width: 768px;
-  }
-
-  @media screen and (min-width: 1200px) {
-    max-width: 1600px;
-    height: 600px;
-    padding-top: 200px;
-  }
+  padding-top: 200px;
 }
 
-// 1,2 - одинаковый шрифт, 3-й другой
 .hero__title {
   margin-top: 0;
   margin-bottom: 30px;
-  font-size: 26px;
-  line-height: 1.62;
-  font-weight: 900;
 
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: $third-text-color;
-
-  @media screen and (min-width: 1200px) {
-    font-size: 44px;
-    line-height: 1.36;
-  }
 }
 
-// Кнопка одинаковая для всех вариантов экранов
 .hero__open-btn {
   display: inline-block;
   padding-top: 10px;

@@ -1,15 +1,18 @@
-// Done
 .advantages--ptb {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  // Для телефона и планшета
+  @media screen and (max-width: 1199px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 
+  // Для ПК
   @media screen and (min-width: 1200px) {
     padding-top: 94px;
     padding-bottom: 94px;
   }
 }
 
-// Nothing
+// Nothing to do
 .title-hidden {
   @extend %visually-hidden;
 }
@@ -17,34 +20,39 @@
 .advantages-list {
   @extend %list-reset;
 
-  // и для планшета и для ПК
+  // Для мобильного по умолчанию
+
+  // Для планшета и ПК
   @media screen and (min-width: 768px) {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /*вдруг добавят еще разделов*/
   }
 }
 
 .advantages-list__item {
+  // Для мобильного по умолчанию display: block;
   @media screen and (max-width: 767px) {
-    margin-bottom: 30px;
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-    width: calc((100% - 30px) / 2);
-
-    &:not(:nth-last-child(-n + 2)) {
+    &:not(:last-child) {
       margin-bottom: 30px;
     }
+  }
+
+  // Для планшета
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    width: calc((100% - 30px) / 2);
 
     &:not(:nth-child(2n)) {
       margin-right: 30px;
     }
+
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 30px;
+    }
   }
 
+  // Для ПК
   @media screen and (min-width: 1200px) {
     width: calc((100% - 90px) / 4);
-
-    margin-bottom: 0;
 
     &:not(:nth-child(4n)) {
       margin-right: 30px;
@@ -55,21 +63,30 @@
 //  Блок с SVG
 .advantages-list__box {
   @extend %flex-center;
-  background: $bg-secondary-color;
-  width: 450px;
-  height: 120px;
-  border-radius: 4px;
-  margin-bottom: 30px;
 
+  height: 120px;
+
+  margin-bottom: 30px;
+  border-radius: 4px;
+  background: $bg-secondary-color;
+
+  // Для мобильного
+  @media screen and (min-width: 480px) {
+    width: 450px;
+  }
+
+  // Для планшета
   @media screen and (min-width: 768px) {
     width: 354px;
   }
 
+  // Для ПК
   @media screen and (min-width: 1200px) {
     width: 270px;
   }
 }
 
+// Nothing to do
 .advantages-list__title {
   margin-top: 0;
   margin-bottom: 10px;
@@ -81,6 +98,7 @@
   text-transform: uppercase;
 }
 
+// Nothing to do
 .advantages-list__text {
   margin: 0;
 

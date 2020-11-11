@@ -13,28 +13,22 @@ img {
 }
 
 // main container
-// .container {
-//   width: 1200px;
-//   margin-left: auto;
-//   margin-right: auto;
-//   padding-left: 15px;
-//   padding-right: 15px;
-// }
-
 .container {
+  width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
 
+  // !для мобильного
   @media screen and (min-width: 480px) {
     width: 480px;
   }
-
+  // !для планшета
   @media screen and (min-width: 768px) {
     width: 768px;
   }
-
+  // !для ПК
   @media screen and (min-width: 1200px) {
     width: 1200px;
   }
@@ -42,21 +36,28 @@ img {
 
 // .section-title for work / team / clients sections
 .section-title {
+  // Для мобильного и планшета
   text-align: center;
   font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
   letter-spacing: 0.03em;
   color: $primary-text-color;
+  line-height: 1.17;
+  font-size: 28px;
+
+  // Только для ПК
+  @media screen and (min-width: 1200px) {
+    font-size: 36px;
+  }
 }
 
 // .section-title--mb for work / team / clients sections
 .section-title--mb {
+  // Для мобильного и планшета
   margin-top: 0;
   margin-bottom: 30px;
 
+  // Только для ПК
   @media screen and (min-width: 1200px) {
-    margin-top: 0;
     margin-bottom: 50px;
   }
 }
