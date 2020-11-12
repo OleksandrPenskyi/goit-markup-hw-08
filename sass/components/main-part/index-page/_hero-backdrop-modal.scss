@@ -47,11 +47,21 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
 
-  width: 528px;
-  height: 581px;
   padding-top: 40px;
   padding-left: 40px;
   padding-right: 40px;
+
+  // для телефона и планшета
+  @media screen and (max-width: 1199px) {
+    width: 450px;
+    height: 609px;
+  }
+
+  // для ПК
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    height: 581px;
+  }
 }
 
 .modal__closed-btn {
@@ -85,14 +95,20 @@
 
 /* Form для модального окна */
 .form-field__title {
+  // для телефонов и планшетов
   display: block;
   margin-bottom: 12px;
 
   font-weight: 700;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.5;
   letter-spacing: 0.03em;
   color: $primary-text-color;
+
+  // для ПК
+  @media screen and (min-width: 1200px) {
+    line-height: 1.15;
+  }
 }
 
 /* для первых трех input  */
@@ -214,7 +230,13 @@
 }
 
 .form-policy--mb {
-  margin-bottom: 30px;
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 31px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 30px;
+  }
 }
 
 .form-policy__label {
@@ -245,11 +267,18 @@
   display: flex;
   align-items: center;
 
+  // для телефона и планшета
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: $secondary-text-color;
+
+  // для ПК
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 
   /* Оформляем кастомный чекбокс */
   &::before {
@@ -257,7 +286,7 @@
     content: '';
     width: 16px;
     height: 15px;
-    margin-right: 8px;
+    margin-right: 7px;
 
     border: 2px solid $primary-text-color;
     border-radius: 2px;

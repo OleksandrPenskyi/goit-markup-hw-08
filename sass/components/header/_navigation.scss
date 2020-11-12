@@ -1,18 +1,36 @@
 // Общая обертка для Логотипа + Меню
 .nav {
-  display: flex;
-  align-items: center;
+  // для телефона
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  // для планшета и ПК
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 // Логотип
 .logo {
-  font-family: $secondary-font-family;
+  // для мобильного и планшета
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
+  font-size: 24px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   text-decoration: none;
   color: $main-blue-color;
+
+  // для ПК
+  @media screen and (min-width: 1200px) {
+    font-family: $secondary-font-family;
+
+    font-size: 26px;
+    line-height: 1.19;
+  }
 }
 
 .logo__studio-black {
@@ -22,30 +40,56 @@
 
 // Меню
 .nav__list {
+  // для мобильного
   display: flex;
+  flex-direction: column;
+  align-items: center;
+
   margin-top: 0;
   margin-bottom: 0;
-  margin-left: 93px;
   margin-right: 0;
   padding: 0;
 
   font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
+  font-size: 18px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   list-style: none;
+
+  // для планшета
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: flex;
+    flex-direction: row;
+    margin-left: 88px;
+    font-size: 14px;
+    line-height: 1.14;
+  }
+
+  // для ПК
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    flex-direction: row;
+    margin-left: 93px;
+    font-size: 14px;
+    line-height: 1.14;
+  }
 }
 
 .nav__list-item:not(:last-child) {
-  margin-right: 50px;
+  // для телефона
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
+  }
+
+  // для планшета и ПК
+  @media screen and (min-width: 768px) {
+    margin-right: 50px;
+  }
 }
 
 .nav__link {
   position: relative;
-
   display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
 
   color: $primary-text-color;
   text-decoration: none;
@@ -56,6 +100,12 @@
   &:focus {
     color: $main-blue-color;
   }
+
+  // для планшета и ПК
+  @media screen and (min-width: 768px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 }
 
 /* active page */
@@ -64,16 +114,31 @@
 
   /* position (after) for active link*/
   &:after {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
+    @media screen and (max-width: 767px) {
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      display: block;
+      content: '';
+      height: 4px;
+      width: 100%;
 
-    display: block;
-    content: '';
-    height: 4px;
-    width: 100%;
+      border-radius: 2px;
+      background: $main-blue-color;
+    }
 
-    border-radius: 2px;
-    background: $main-blue-color;
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+
+      display: block;
+      content: '';
+      height: 4px;
+      width: 100%;
+
+      border-radius: 2px;
+      background: $main-blue-color;
+    }
   }
 }
