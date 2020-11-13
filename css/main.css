@@ -658,6 +658,25 @@ img {
   height: 100%;
   /* Чтобы модальное окно было выше других эллементов страницы */
   z-index: 100;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 767px) {
+  .backdrop--pos-size {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 93px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .backdrop.is-hidden {
@@ -695,7 +714,14 @@ img {
   padding-right: 40px;
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 767px) {
+  .modal--pos-size {
+    width: 450px;
+    height: 609px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .modal--pos-size {
     width: 450px;
     height: 609px;
@@ -1771,7 +1797,23 @@ img {
   position: relative;
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 767px) {
+  .subscribe__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .subscribe__form {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1819,7 +1861,24 @@ img {
   /* Когда input активен или исчез плейсхолдер - (label) надпись E-mail скрывается  */
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 767px) {
+  .subscribe__form-input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .subscribe__form-input {
     display: -webkit-box;
     display: -ms-flexbox;

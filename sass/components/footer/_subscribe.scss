@@ -18,8 +18,17 @@
 .subscribe__form {
   position: relative;
 
-  // для телефона и планшета
-  @media screen and (max-width: 1199px) {
+  // для телефона
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+  }
+
+  // для планшета
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,8 +65,18 @@
     @extend %visually-hidden;
   }
 
-  // для телефона и планшета
-  @media screen and (max-width: 1199px) {
+  // для телефона
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    margin-bottom: 20px;
+  }
+
+  // для планшета
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     display: flex;
     flex-direction: column;
     align-items: center;
