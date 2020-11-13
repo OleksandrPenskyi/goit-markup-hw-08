@@ -1,6 +1,13 @@
 .works--ptb {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  @media screen and (max-width: 1199px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .title-hidden {
@@ -9,18 +16,49 @@
 
 // Фильтры
 .filter {
-  display: flex;
-  justify-content: center;
-
   list-style: none;
+
+  // для телефона
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  // для планшета и ПК
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 .filter--mp {
   margin-top: 0;
-  margin-bottom: 34px;
   margin-left: 0;
   margin-right: 0;
   padding: 0;
+
+  // для телефона
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
+  }
+
+  // для планшета
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-bottom: 30px;
+  }
+
+  // для ПК
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 50px;
+  }
+}
+
+.filter__list:not(:nth-last-child(-n + 2)) {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 15px;
+  }
 }
 
 .filter__list:not(:last-child) {
