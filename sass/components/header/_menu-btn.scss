@@ -1,0 +1,77 @@
+// Общий блок для nav+contacts
+.header__logo-btn {
+  // для телефона
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media screen and (min-width: 1200px) {
+    // display: flex;
+    // flex-direction: row;
+    // align-items: center;
+  }
+}
+
+.menu-button {
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.menu-button__close {
+  display: none;
+}
+
+.menu-button.is-open {
+  & .menu-button__open {
+    display: none;
+  }
+
+  & .menu-button__close {
+    display: block;
+  }
+}
+
+.menu-container.is-open {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  width: 100%;
+
+  display: block;
+
+  background: $bg-third-color;
+}
+
+.menu-button__svg {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.menu-container {
+  // для телефона
+  @media screen and (max-width: 767px) {
+    display: none;
+
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}

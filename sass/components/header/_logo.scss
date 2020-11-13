@@ -1,0 +1,23 @@
+// Логотип
+.logo {
+  // для мобильного и планшета
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: $main-blue-color;
+
+  // для ПК
+  @media screen and (min-width: 1200px) {
+    font-family: $secondary-font-family;
+
+    font-size: 26px;
+    line-height: 1.19;
+  }
+}
+
+.logo__studio-black {
+  color: $primary-text-color;
+}
+// CLOSED Логотип

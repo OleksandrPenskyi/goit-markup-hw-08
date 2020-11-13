@@ -1,12 +1,10 @@
 .contacts {
-  // для телефона
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   // для телеофна
   @media screen and (max-width: 767px) {
     margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   // для планшета
@@ -15,7 +13,8 @@
     flex-direction: column;
     align-items: flex-start;
 
-    margin-left: auto;
+    // Чтобы отодвинуть меню от себя
+    margin-left: 84px;
   }
 
   // для ПК
@@ -24,12 +23,14 @@
     flex-direction: row;
     align-items: center;
 
-    margin-left: auto;
+    // Чтобы отодвинуть меню от себя
+    margin-left: 305px;
   }
 }
 
 .contacts__link {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   align-items: center;
 
   color: $secondary-text-color;
@@ -50,7 +51,13 @@
   @media screen and (max-width: 767px) {
     font-size: 18px;
     line-height: 1.17;
-    margin-bottom: 16px;
+  }
+
+  &:not(:last-child) {
+    // для мобильного исключение
+    @media screen and (max-width: 767px) {
+      margin-bottom: 16px;
+    }
   }
 
   // для планшета
@@ -147,4 +154,8 @@
     width: 10px;
     height: 16px;
   }
+}
+
+.header__nav-contacts {
+  display: none;
 }

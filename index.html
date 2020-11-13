@@ -17,45 +17,75 @@
   </head>
   <body>
     <!-- todo Шапка сайта -->
-    <header class="header">
+    <header class="header header--ptb">
       <div class="container">
         <!-- Общий flex-контейнер для всего header -->
         <div class="header-flex">
-          <nav class="nav">
+          <!-- Для флекса мобильного вида экрана -->
+          <div class="header__logo-btn">
             <!-- Логотип -->
             <a class="logo" href="./index.html"
               >Web<span class="logo__studio-black">Studio</span></a
             >
 
+            <!-- Кнопка открытия-закрытия исключительно для мобильного телефона -->
+            <button
+              class="menu-button"
+              type="button"
+              aria-expanded="false"
+              aria-controls="menu-container"
+              data-menu-button
+            >
+              <svg
+                class="menu-button__svg"
+                width="40"
+                height="40"
+                aria-label="Переключатель мобильного меню"
+              >
+                <use class="menu-button__open" href="./images/symbols.svg#icon-menu_open"></use>
+                <use class="menu-button__close" href="./images/symbols.svg#icon-menu_close"></use>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Для флекса мобильного вида экрана. Выезжающее меню -->
+          <div class="menu-container" id="menu-container" data-menu>
             <!-- Меню -->
-            <ul class="nav__list">
-              <li class="nav__list-item">
-                <a href="./index.html" class="nav__link nav__link--active">Студия</a>
-              </li>
-              <li class="nav__list-item">
-                <a href="./portfolio.html" class="nav__link">Портфолио</a>
-              </li>
-              <li class="nav__list-item">
-                <a href="#" class="nav__link">Контакты</a>
-              </li>
-            </ul>
-          </nav>
 
-          <!-- Контакты - блок с емейлом и номером телефона -->
-          <div class="contacts">
-            <a class="contacts__link" href="mailto:info@devstudio.com">
-              <svg class="contacts__icon contacts__icon--envelope-size">
-                <use class="contacts__svg-envelope" href="./images/symbols.svg#icon-envelope"></use>
-              </svg>
-              info@devstudio.com
-            </a>
+            <nav class="nav">
+              <!-- Меню -->
+              <ul class="nav__list">
+                <li class="nav__list-item">
+                  <a href="./index.html" class="nav__link nav__link--active">Студия</a>
+                </li>
+                <li class="nav__list-item">
+                  <a href="./portfolio.html" class="nav__link">Портфолио</a>
+                </li>
+                <li class="nav__list-item">
+                  <a href="#" class="nav__link">Контакты</a>
+                </li>
+              </ul>
+            </nav>
 
-            <a class="contacts__link" href="tel:+380961111111">
-              <svg class="contacts__icon contacts__icon--tel-size">
-                <use href="./images/symbols.svg#icon-tel"></use>
-              </svg>
-              +38 096 111 11 11
-            </a>
+            <!-- Контакты - блок с емейлом и номером телефона -->
+            <div class="contacts">
+              <a class="contacts__link" href="mailto:info@devstudio.com">
+                <svg class="contacts__icon contacts__icon--envelope-size">
+                  <use
+                    class="contacts__svg-envelope"
+                    href="./images/symbols.svg#icon-envelope"
+                  ></use>
+                </svg>
+                info@devstudio.com
+              </a>
+
+              <a class="contacts__link" href="tel:+380961111111">
+                <svg class="contacts__icon contacts__icon--tel-size">
+                  <use href="./images/symbols.svg#icon-tel"></use>
+                </svg>
+                +38 096 111 11 11
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -523,6 +553,7 @@
       </div>
     </footer>
 
+    <script src="./js/menu.js"></script>
     <script src="./js/modal.js"></script>
   </body>
 </html>
