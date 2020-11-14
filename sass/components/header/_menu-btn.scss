@@ -1,6 +1,7 @@
 // Общий блок для nav+contacts
 .header__logo-btn {
-  // для телефона
+  // для телефон
+
   @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: row;
@@ -38,13 +39,25 @@
 }
 
 .menu-container {
+  transition: transform 250ms linear;
+
   // для телефона
   // Когда .menu-container неактивно, т.е. без .is-open, то выпадающее меню скрыто
   @media screen and (max-width: 767px) {
-    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -65px);
 
+    z-index: 100;
+    background: $bg-third-color;
+
+    max-width: 480px;
+    width: 100%;
     padding-top: 60px;
     padding-bottom: 60px;
+
+    pointer-events: none;
   }
 
   // Когда .menu-container активно, т.е. с .is-open, то выпадающее меню показано, но только в мобильной версии сайта
@@ -52,13 +65,19 @@
   &.is-open {
     @media screen and (max-width: 767px) {
       position: absolute;
-      top: 65px;
-      left: 0;
-      width: 100%;
-      z-index: 100;
+      left: 50%;
+      bottom: -1px;
+      transform: translate(-50%, +100%);
 
-      display: block;
+      z-index: 100;
       background: $bg-third-color;
+
+      max-width: 480px;
+      width: 100%;
+      padding-top: 60px;
+      padding-bottom: 60px;
+
+      pointer-events: none;
     }
   }
 
