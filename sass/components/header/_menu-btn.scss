@@ -39,7 +39,8 @@
 }
 
 .menu-container {
-  transition: transform 250ms linear;
+  transition: transform $transition-duration $transition-timing-formula,
+    opacity $transition-duration $transition-timing-formula;
 
   // для телефона
   // Когда .menu-container неактивно, т.е. без .is-open, то выпадающее меню скрыто
@@ -48,8 +49,9 @@
     left: 50%;
     bottom: 0;
     transform: translate(-50%, -65px);
+    opacity: 0;
 
-    z-index: 100;
+    z-index: -1;
     background: $bg-third-color;
 
     max-width: 480px;
@@ -68,8 +70,9 @@
       left: 50%;
       bottom: -1px;
       transform: translate(-50%, +100%);
+      opacity: 1;
 
-      z-index: 100;
+      z-index: -1;
       background: $bg-third-color;
 
       max-width: 480px;
