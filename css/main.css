@@ -201,16 +201,6 @@ img {
   display: block;
 }
 
-.menu-container.is-open {
-  position: absolute;
-  top: 65px;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  display: block;
-  background: #ffffff;
-}
-
 @media screen and (min-width: 768px) {
   .menu-button__svg {
     display: none;
@@ -222,6 +212,18 @@ img {
     display: none;
     padding-top: 60px;
     padding-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .menu-container.is-open {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: block;
+    background: #ffffff;
   }
 }
 
@@ -674,8 +676,24 @@ img {
         -ms-flex-align: center;
             align-items: center;
     padding-top: 93px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-bottom: 94px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .backdrop--pos-size {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 208px;
+    padding-bottom: 208px;
   }
 }
 
@@ -686,9 +704,18 @@ img {
   /* *При выключенном backdrop, свойства modal такие */
 }
 
-.backdrop.is-hidden .modal {
-  -webkit-transform: translate(-50%, -50%) scale(1.2);
-          transform: translate(-50%, -50%) scale(1.2);
+@media screen and (max-width: 767px) {
+  .backdrop.is-hidden .modal {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .backdrop.is-hidden .modal {
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+            transform: translate(-50%, -50%) scale(1.2);
+  }
 }
 
 /* *Modal активное */
@@ -705,25 +732,24 @@ img {
 
 .modal--pos-size {
   padding-top: 40px;
+  padding-bottom: 40px;
   padding-left: 40px;
   padding-right: 40px;
 }
 
 @media screen and (max-width: 767px) {
   .modal--pos-size {
-    position: relative;
-    width: 100%;
+    position: absolute;
     height: 609px;
+    max-width: 450px;
+    margin-left: 15px;
+    margin-right: 15px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .modal--pos-size {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%) scale(1);
-            transform: translate(-50%, -50%) scale(1);
     height: 609px;
     max-width: 450px;
     width: 100%;

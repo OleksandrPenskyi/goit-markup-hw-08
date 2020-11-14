@@ -7,12 +7,6 @@
     align-items: center;
     justify-content: space-between;
   }
-
-  @media screen and (min-width: 1200px) {
-    // display: flex;
-    // flex-direction: row;
-    // align-items: center;
-  }
 }
 
 .menu-button {
@@ -37,18 +31,6 @@
   }
 }
 
-.menu-container.is-open {
-  position: absolute;
-  top: 65px;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-
-  display: block;
-
-  background: $bg-third-color;
-}
-
 .menu-button__svg {
   @media screen and (min-width: 768px) {
     display: none;
@@ -57,11 +39,27 @@
 
 .menu-container {
   // для телефона
+  // Когда .menu-container неактивно, т.е. без .is-open, то выпадающее меню скрыто
   @media screen and (max-width: 767px) {
     display: none;
 
     padding-top: 60px;
     padding-bottom: 60px;
+  }
+
+  // Когда .menu-container активно, т.е. с .is-open, то выпадающее меню показано, но только в мобильной версии сайта
+  // это окно видно только в мобильной версии. Если в мобильной версии его открыть и повернуть экран, то оно будет без лага исчезать.
+  &.is-open {
+    @media screen and (max-width: 767px) {
+      position: absolute;
+      top: 65px;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+
+      display: block;
+      background: $bg-third-color;
+    }
   }
 
   @media screen and (min-width: 768px) and (max-width: 1199px) {
