@@ -334,13 +334,53 @@
 
           <ul class="team-list">
             <li class="team-list__item">
-              <img
-                class="team-list__img"
-                src="./images/photo_1.jpg"
-                alt="Игорь Демьяненко"
-                width="270"
-                height="260"
-              />
+              <!-- Фото № 1 -->
+              <picture>
+                <!-- для ПК -->
+                <source
+                  srcset="
+                    ./images/images-index/team/pc/photo1/photo1@1x.webp 1x,
+                    ./images/images-index/team/pc/photo1/photo1@2x.webp 2x,
+                    ./images/images-index/team/pc/photo1/photo1@3x.webp 3x
+                  "
+                  type="image/webp"
+                  media="(min-width: 1200px)"
+                />
+
+                <!-- для планшета -->
+                <source
+                  srcset="
+                    ./images/images-index/team/tablet/photo1/photo1@1x.webp 1x,
+                    ./images/images-index/team/tablet/photo1/photo1@2x.webp 2x,
+                    ./images/images-index/team/tablet/photo1/photo1@3x.webp 3x
+                  "
+                  type="image/webp"
+                  media="(min-width: 768px)"
+                />
+
+                <!-- для телефона -->
+                <source
+                  srcset="
+                    ./images/images-index/team/mobile/photo1/photo1@1x.webp 1x,
+                    ./images/images-index/team/mobile/photo1/photo1@2x.webp 2x,
+                    ./images/images-index/team/mobile/photo1/photo1@3x.webp 3x
+                  "
+                  type="image/webp"
+                  media="(max-width: 767px)"
+                />
+
+                <!-- По умолчанию картинка с макета для ПК -->
+                <img
+                  class="team-list__img"
+                  src="./images/images-index/team/pc/photo1/photo1@1x.jpg"
+                  srcset="
+                    ./images/images-index/team/pc/photo1/photo1@2x.jpg 2x,
+                    ./images/images-index/team/pc/photo1/photo1@3x.jpg 3x
+                  "
+                  alt="Игорь Демьяненко"
+                />
+              </picture>
+
               <h3 class="team-list__title">Игорь Демьяненко</h3>
               <p class="team-list__text" lang="en">Product Designer</p>
               <div class="team-list__social-block">
