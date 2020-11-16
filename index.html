@@ -32,6 +32,7 @@
             <button
               class="menu-button"
               type="button"
+              aria-label="Кнопка открытия меню"
               aria-expanded="false"
               aria-controls="menu-container"
               data-menu-button
@@ -108,7 +109,14 @@
           </h1>
 
           <!-- Кнопка окрытия модального окна -->
-          <button class="hero__open-btn" type="button" data-modal-open>Заказать услугу</button>
+          <button
+            class="hero__open-btn"
+            type="button"
+            aria-label="Кнопка заказа услуги"
+            data-modal-open
+          >
+            Заказать услугу
+          </button>
 
           <!-- Модальное окно -->
           <div class="backdrop is-hidden backdrop--pos-size" data-modal>
@@ -285,38 +293,106 @@
 
           <ul class="work-list">
             <li class="work-list__item">
-              <img
-                src="./images/img_1.jpg"
-                alt="Набор кода используя планшет"
-                width="370"
-                height="294"
-              />
+              <!-- Фото № 1 -->
+              <picture>
+                <!-- Только для ПК в формате webp -->
+                <source
+                  srcset="
+                    ./images/images-index/work/pc/work1/work1@1x.webp 1x,
+                    ./images/images-index/work/pc/work1/work1@2x.webp 2x
+                  "
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+
+                <!-- Только для ПК в формате jpg -->
+                <source
+                  srcset="
+                    ./images/images-index/work/pc/work1/work1@1x.jpg 1x,
+                    ./images/images-index/work/pc/work1/work1@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                  type="image/jpg"
+                />
+
+                <img
+                  src="./images/images-index/work/pc/work1/work1@1x.jpg"
+                  alt="Набор кода на планшете"
+                  aria-label="Набор кода на планшете"
+                />
+              </picture>
 
               <!-- *Блок для позиционирования -->
               <div class="work-list__position-block">
                 <p class="work-list__position-text">Десктопные приложения</p>
               </div>
             </li>
+
             <li class="work-list__item">
-              <img
-                src="./images/img_2.jpg"
-                alt="Макет дизайна рабочего стола мобильного телефона"
-                width="370"
-                height="294"
-              />
+              <!-- Фото № 2 -->
+              <picture>
+                <!-- Только для ПК в формате webp -->
+                <source
+                  srcset="
+                    ./images/images-index/work/pc/work2/work2@1x.webp 1x,
+                    ./images/images-index/work/pc/work2/work2@2x.webp 2x
+                  "
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+
+                <!-- Только для ПК в формате jpg -->
+                <source
+                  srcset="
+                    ./images/images-index/work/pc/work2/work2@1x.jpg 1x,
+                    ./images/images-index/work/pc/work2/work2@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                  type="image/jpg"
+                />
+
+                <img
+                  src="./images/images-index/work/pc/work2/work2@1x.jpg"
+                  alt="Макет дизайна рабочего стола мобильного телефона"
+                  aria-label="Макет дизайна рабочего стола мобильного телефона"
+                />
+              </picture>
 
               <!-- *Блок позиционирования -->
               <div class="work-list__position-block">
                 <p class="work-list__position-text">Мобильные приложения</p>
               </div>
             </li>
+
             <li class="work-list__item">
-              <img
-                src="./images/img_3.jpg"
-                alt="Цветовая палитра на экране планшета"
-                width="370"
-                height="294"
-              />
+              <!-- Фото № 3 -->
+              <picture>
+                <!-- Только для ПК в формате webp -->
+                <source
+                  srcset="
+                    ./images/images-index/work/pc/work3/work3@1x.webp 1x,
+                    ./images/images-index/work/pc/work3/work3@2x.webp 2x
+                  "
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+
+                <!-- Только для ПК в формате jpg -->
+                <source
+                  srcset="
+                    ./images/images-index/work/pc/work3/work3@1x.jpg 1x,
+                    ./images/images-index/work/pc/work3/work3@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                  type="image/jpg"
+                />
+
+                <img
+                  src="./images/images-index/work/pc/work3/work3@1x.jpg"
+                  alt="Цветовая палитра на экране планшета"
+                  aria-label="Цветовая палитра на экране планшета"
+                />
+              </picture>
 
               <!-- *Блок позиционирования -->
               <div class="work-list__position-block">
@@ -694,7 +770,7 @@
                 <!-- Стандартная картинка -->
                 <img
                   class="team-list__img"
-                  src="./images/images-index/team/mobile/photo3/photo3@1x.jpg"
+                  src="./images/images-index/team/mobile/photo4/photo4@1x.jpg"
                   alt="Фото Михаил Ермаков"
                   aria-label="Михаил Ермаков"
                 />
@@ -831,7 +907,11 @@
               <label class="subscribe__form-label" for="email">E-mail</label>
 
               <!-- Кнопка "Подписаться" -->
-              <button class="subscribe__form-btn" type="submit">
+              <button
+                class="subscribe__form-btn"
+                type="submit"
+                aria-label="Кнопка подписаться на рекламную рассылку"
+              >
                 Подписаться
                 <svg
                   class="subscribe__svg"
