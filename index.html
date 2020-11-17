@@ -32,7 +32,7 @@
             <button
               class="menu-button"
               type="button"
-              aria-label="Кнопка открытия меню"
+              aria-label="Кнопка открытия мобильного меню"
               aria-expanded="false"
               aria-controls="menu-container"
               data-menu-button
@@ -122,7 +122,12 @@
           <div class="backdrop is-hidden backdrop--pos-size" data-modal>
             <div class="modal modal--pos-size">
               <!-- Кнопка закрытия модального окна -->
-              <button class="modal__closed-btn" type="button" data-modal-close>
+              <button
+                class="modal__closed-btn"
+                type="button"
+                aria-label="Кнопка закрытия формы заказа услуги"
+                data-modal-close
+              >
                 <svg
                   class="modal__closed-svg"
                   width="11"
@@ -215,7 +220,13 @@
                 </div>
 
                 <!-- Кнопка отправки формы -->
-                <button class="btn-send btn-send--size" type="submit">Отправить</button>
+                <button
+                  class="btn-send btn-send--size"
+                  type="submit"
+                  aria-label="Кнопка отправки формы заказа услуги"
+                >
+                  Отправить
+                </button>
               </form>
               <!--  -->
             </div>
