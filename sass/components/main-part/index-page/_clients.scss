@@ -1,4 +1,5 @@
 .clients--ptb {
+  // для телефона и планшета
   padding-top: 60px;
   padding-bottom: 60px;
 
@@ -35,6 +36,8 @@
     border-color: $main-blue-color;
     fill: $main-blue-color;
   }
+
+  // Не делал mobile-first разметку, чтобы проще было понимать разметку
 
   // Для мобильного
   @media screen and (max-width: 767px) {

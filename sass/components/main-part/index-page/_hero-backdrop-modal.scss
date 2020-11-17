@@ -20,39 +20,46 @@
   // Чтобы модальное окно скролилось
   overflow-y: scroll;
 
+  // для выравнивания модального окна
   // для телефона
-  @media screen and (max-width: 767px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    padding-top: 93px;
-    padding-bottom: 94px;
-  }
+  padding-top: 93px;
+  padding-bottom: 94px;
 
+  // для планшета
   @media screen and (min-width: 768px) and (max-width: 1199px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 
     padding-top: 208px;
     padding-bottom: 208px;
+  }
+
+  // для ПК
+  @media screen and (min-width: 1200px) {
+    padding: 0;
   }
 }
 
 .backdrop.is-hidden {
   opacity: 0;
-
   /* чтобы пропадала подложка backdrop и под ним можно было что-то нажать */
   pointer-events: none;
 
   /* *При выключенном backdrop, свойства modal такие */
-  @media screen and (max-width: 767px) {
-    & .modal {
-      transform: scale(1.2);
-    }
+  // Для мобильного
+  & .modal {
+    transform: scale(1.2);
   }
 
+  // для планшета и ПК
   @media screen and (min-width: 768px) {
     & .modal {
       transform: translate(-50%, -50%) scale(1.2);
@@ -77,36 +84,34 @@
   padding-right: 40px;
 
   // для телефона
-  @media screen and (max-width: 767px) {
-    // чтобы относительно моадлки в мобильной версии сайта, спозиционировать кнопку закрыия
-    position: absolute;
+  // чтобы относительно моадлки в мобильной версии сайта, спозиционировать кнопку закрыия
+  position: absolute;
 
-    height: 609px;
-    max-width: 450px;
-    // width: 100%;
-    margin-left: 15px;
-    margin-right: 15px;
-  }
+  height: 609px;
+  max-width: 450px;
+  margin-left: 15px;
+  margin-right: 15px;
 
   // для планшета
   @media screen and (min-width: 768px) and (max-width: 1199px) {
     // чтобы относительно моадлки в планшетной версии сайта, спозиционировать кнопку закрыия
-    position: absolute;
-
-    height: 609px;
-    max-width: 450px;
-    width: 100%;
-  }
-
-  // для ПК
-  @media screen and (min-width: 1200px) {
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
 
-    width: 528px;
+    width: 100%;
+    margin: 0;
+  }
+
+  // для ПК
+  @media screen and (min-width: 1200px) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    max-width: 528px;
     height: 581px;
+    margin: 0;
   }
 }
 
@@ -310,8 +315,8 @@
 }
 
 .form-policy__icon-check {
-  display: flex;
-  align-items: center;
+  @extend %flex-center;
+  flex-wrap: wrap;
 
   // для телефона и планшета
   font-weight: 400;
@@ -319,11 +324,6 @@
   line-height: 1.17;
   letter-spacing: 0.03em;
   color: $secondary-text-color;
-
-  @media screen and (max-width: 767px) {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 
   // для ПК
   @media screen and (min-width: 1200px) {

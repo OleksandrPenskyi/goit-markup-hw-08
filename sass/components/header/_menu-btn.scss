@@ -1,13 +1,9 @@
 // Общий блок для nav+contacts
 .header__logo-btn {
-  // для телефон
-
-  @media screen and (max-width: 767px) {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .menu-button {
@@ -33,11 +29,13 @@
 }
 
 .menu-button__svg {
+  // для планшета и ПК
   @media screen and (min-width: 768px) {
     display: none;
   }
 }
 
+// Не делал mobile-first разметку, чтобы проще было понимать разметку
 .menu-container {
   transition: transform $transition-duration $transition-timing-formula,
     opacity $transition-duration $transition-timing-formula;
@@ -51,7 +49,7 @@
     transform: translate(-50%, -65px);
     opacity: 0;
 
-    z-index: -1;
+    z-index: -111;
     background: $bg-third-color;
 
     max-width: 480px;
@@ -72,7 +70,6 @@
       transform: translate(-50%, +100%);
       opacity: 1;
 
-      z-index: -1;
       background: $bg-third-color;
 
       max-width: 480px;
@@ -80,7 +77,7 @@
       padding-top: 60px;
       padding-bottom: 60px;
 
-      pointer-events: none;
+      pointer-events: all;
     }
   }
 

@@ -1,9 +1,9 @@
 .works--ptb {
-  @media screen and (max-width: 1199px) {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
+  // для телефона и планшета
+  padding-top: 60px;
+  padding-bottom: 60px;
 
+  // для ПК
   @media screen and (min-width: 1200px) {
     padding-top: 94px;
     padding-bottom: 94px;
@@ -19,16 +19,14 @@
   list-style: none;
 
   // для телефона
-  @media screen and (max-width: 767px) {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
   // для планшета и ПК
   @media screen and (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
+    flex-wrap: nowrap;
+
     justify-content: center;
   }
 }
@@ -40,9 +38,7 @@
   padding: 0;
 
   // для телефона
-  @media screen and (max-width: 767px) {
-    margin-bottom: 40px;
-  }
+  margin-bottom: 40px;
 
   // для планшета
   @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -55,6 +51,7 @@
   }
 }
 
+// Не делал mobile-first разметку, чтобы проще было понимать разметку
 .filter__list:not(:nth-last-child(-n + 2)) {
   @media screen and (max-width: 767px) {
     margin-bottom: 15px;

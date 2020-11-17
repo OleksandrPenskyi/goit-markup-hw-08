@@ -1,7 +1,10 @@
 .work {
-  // Для мобильного и планшета
-  @media screen and (max-width: 1199px) {
-    display: none;
+  // для мобильного и планшета
+  display: none;
+
+  // для ПК
+  @media screen and (min-width: 1200px) {
+    display: block;
   }
 }
 

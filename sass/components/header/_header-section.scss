@@ -4,25 +4,28 @@
 }
 
 .header--ptb {
-  @media screen and (max-width: 767px) {
-    padding-top: 10px;
-    padding-bottom: 10px;
+  // для телефона
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  z-index: 111;
+
+  // для планшета и ПК
+  @media screen and (min-width: 768px) {
+    padding-top: 0;
+    padding-bottom: 0;
     position: relative;
-    z-index: 111;
+    z-index: 1;
   }
 }
 
 .header-flex {
   // для телефона
-  @media screen and (max-width: 767px) {
-    display: flex;
-    flex-direction: column;
-    // align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
 
   // для планшета и ПК
   @media screen and (min-width: 768px) {
-    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;

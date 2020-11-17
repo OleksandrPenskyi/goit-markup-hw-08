@@ -18,14 +18,7 @@
 }
 
 .footer__wrapper {
-  // для планшета
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-    display: flex;
-    align-items: baseline;
-    justify-content: start;
-  }
-
-  // для ПК
+  // для планшета и ПК
   @media screen and (min-width: 768px) {
     display: flex;
     align-items: baseline;

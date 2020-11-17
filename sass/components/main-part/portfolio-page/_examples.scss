@@ -8,6 +8,7 @@
   }
 }
 
+// Не делал mobile-first разметку, чтобы проще было понимать разметку
 .examples__list {
   background: $bg-card-color;
   transition: box-shadow $transition-duration $transition-timing-formula;

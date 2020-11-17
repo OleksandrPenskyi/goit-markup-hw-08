@@ -1,17 +1,15 @@
 .contacts {
-  // для телеофна
-  @media screen and (max-width: 767px) {
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  // для телефона
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   // для планшета
   @media screen and (min-width: 768px) and (max-width: 1199px) {
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
+
+    margin-top: 0;
 
     // Чтобы отодвинуть меню от себя
     margin-left: 84px;
@@ -19,15 +17,16 @@
 
   // для ПК
   @media screen and (min-width: 1200px) {
-    display: flex;
     flex-direction: row;
-    align-items: center;
 
     // Чтобы отодвинуть меню от себя
     margin-left: 305px;
+
+    margin-top: 0;
   }
 }
 
+// Не делал mobile-first разметку, чтобы проще было понимать разметку
 .contacts__link {
   display: flex;
   flex-direction: row;
@@ -98,29 +97,20 @@
 
 /* Отступ SVG от ссылки */
 .contacts__icon {
-  // для телефона
-  @media screen and (max-width: 767px) {
-    margin-right: 10px;
-  }
+  // для телефона и ПК
+  margin-right: 10px;
 
   // для планшета
   @media screen and (min-width: 768px) and (max-width: 1199px) {
     margin-right: 8px;
-  }
-
-  // для ПК
-  @media screen and (min-width: 1200px) {
-    margin-right: 10px;
   }
 }
 
 // Размеры иконки-конверта для разных экранов
 .contacts__icon--envelope-size {
   // для телефона
-  @media screen and (max-width: 767px) {
-    width: 16px;
-    height: 11px;
-  }
+  width: 16px;
+  height: 11px;
 
   // для планшета
   @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -130,7 +120,6 @@
 
   // для ПК
   @media screen and (min-width: 1200px) {
-    width: 16px;
     height: 12px;
   }
 }
@@ -138,20 +127,16 @@
 // Размеры иконки-телефон для разных экранов
 .contacts__icon--tel-size {
   // для телефона
-  @media screen and (max-width: 767px) {
-    width: 10px;
-    height: 15px;
-  }
+  width: 10px;
+  height: 15px;
 
   // для планшета
   @media screen and (min-width: 768px) and (max-width: 1199px) {
-    width: 10px;
     height: 14px;
   }
 
   // для ПК
   @media screen and (min-width: 1200px) {
-    width: 10px;
     height: 16px;
   }
 }

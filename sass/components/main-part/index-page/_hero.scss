@@ -4,27 +4,62 @@
 
 .hero-container {
   background-color: $bg-main-color;
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url('../images/main-bg.jpg');
   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  // для мобильного
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/images-index/bg/mobile/bg-mobile@1x.jpg');
+
+  // для мобильного плотность x2
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url('../images/images-index/bg/mobile/bg-mobile@2x.jpg');
+  }
+
+  // для планшета
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url('../images/images-index/bg/tablet/bg-tablet@1x.jpg');
+
+    // для планшета плотность x2
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url('../images/images-index/bg/tablet/bg-tablet@2x.jpg');
+    }
+  }
+
+  // для ПК
+  @media screen and (min-width: 1200px) {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url('../images/images-index/bg/pc/bg-pc@1x.jpg');
+
+    // для ПК плотность x2
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url('../images/images-index/bg/pc/bg-pc@2x.jpg');
+    }
+  }
 }
 
 .hero-container--size {
+  // для телефона
+  max-width: 480px;
+  height: 400px;
+  padding-top: 118px;
   margin-left: auto;
   margin-right: auto;
-
-  // для телефона
-  @media screen and (max-width: 767px) {
-    max-width: 480px;
-    height: 400px;
-    padding-top: 118px;
-  }
 
   // для планшета
   @media screen and (min-width: 768px) and (max-width: 1199px) {
     max-width: 768px;
-    height: 400px;
-    padding-top: 118px;
   }
 
   // для ПК

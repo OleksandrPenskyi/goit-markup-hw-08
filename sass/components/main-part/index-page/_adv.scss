@@ -1,9 +1,7 @@
 .advantages--ptb {
   // Для телефона и планшета
-  @media screen and (max-width: 1199px) {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
+  padding-top: 60px;
+  padding-bottom: 60px;
 
   // Для ПК
   @media screen and (min-width: 1200px) {
@@ -29,6 +27,7 @@
   }
 }
 
+// Не делал mobile-first разметку, чтобы проще было понимать разметку
 .advantages-list__item {
   // Для мобильного по умолчанию display: block;
   @media screen and (max-width: 767px) {
@@ -65,15 +64,13 @@
   @extend %flex-center;
 
   height: 120px;
-
   margin-bottom: 30px;
   border-radius: 4px;
+
   background: $bg-secondary-color;
 
   // Для мобильного
-  @media screen and (min-width: 480px) {
-    width: 450px;
-  }
+  width: 450px;
 
   // Для планшета
   @media screen and (min-width: 768px) {

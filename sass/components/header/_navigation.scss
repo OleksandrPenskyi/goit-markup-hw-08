@@ -1,19 +1,3 @@
-// .nav {
-// для телефона
-// @media screen and (max-width: 767px) {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-// для планшета
-// @media screen and (min-width: 768px) and (max-width: 1199px) {
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-// }
-// }
-
 // Меню
 .nav__list {
   margin-top: 0;
@@ -28,17 +12,13 @@
   list-style: none;
 
   // для мобильного
-  @media screen and (max-width: 767px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   // для планшета
   @media screen and (min-width: 768px) and (max-width: 1199px) {
-    display: flex;
     flex-direction: row;
-    align-items: center;
 
     font-size: 14px;
     line-height: 1.14;
@@ -46,15 +26,14 @@
 
   // для ПК
   @media screen and (min-width: 1200px) {
-    display: flex;
     flex-direction: row;
-    align-items: center;
 
     font-size: 14px;
     line-height: 1.14;
   }
 }
 
+// Не делал mobile-first разметку, чтобы проще было понимать разметку
 .nav__list-item:not(:last-child) {
   // для телефона
   @media screen and (max-width: 767px) {
@@ -94,31 +73,21 @@
 
   /* position (after) for active link*/
   &:after {
-    @media screen and (max-width: 767px) {
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      display: block;
-      content: '';
-      height: 4px;
-      width: 100%;
+    // для телефона и планшета
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    display: block;
+    content: '';
+    height: 4px;
+    width: 100%;
 
-      border-radius: 2px;
-      background: $main-blue-color;
-    }
+    border-radius: 2px;
+    background: $main-blue-color;
 
+    // для ПК
     @media screen and (min-width: 768px) {
-      position: absolute;
       bottom: -1px;
-      left: 0;
-
-      display: block;
-      content: '';
-      height: 4px;
-      width: 100%;
-
-      border-radius: 2px;
-      background: $main-blue-color;
     }
   }
 }
