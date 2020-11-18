@@ -70,7 +70,8 @@
   background: $bg-secondary-color;
 
   // Для мобильного
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
 
   // Для планшета
   @media screen and (min-width: 768px) {
